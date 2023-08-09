@@ -126,7 +126,7 @@ class Connection(Thread):
             self.socket.run_forever(**self.socket_kwargs)
 
     def _on_open(self, *args):
-        self.logger.info("Connection: Connection opened")
+        self.logger.info("Custom Connection: Connection opened")
 
         # Send a ping right away to inform that the connection is alive. If you
         # don't do this, it takes the ping interval to subcribe to channel and
