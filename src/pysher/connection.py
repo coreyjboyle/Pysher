@@ -174,7 +174,7 @@ class Connection(Thread):
     def _on_close(self, *args):
         self.logger.info("Connection: Connection closed - %s", % args[-1])
         self.state = "disconnected"
-        self._stop_timers()
+        self.needs_reconnect = True
 
     @staticmethod
     def _parse(message):
