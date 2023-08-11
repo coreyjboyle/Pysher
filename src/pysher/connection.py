@@ -172,7 +172,7 @@ class Connection(Thread):
         self._start_timers()
 
     def _on_close(self, *args):
-        self.logger.info("Connection: Connection closed")
+        self.logger.info("Connection: Connection closed - %s", % args[-1])
         self.state = "disconnected"
         self._stop_timers()
 
